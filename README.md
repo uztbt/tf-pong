@@ -1,17 +1,27 @@
 # tf-pong
 Sample project for my future reference.
 
+![screen-shot](./screenshot.png)
+
+## How to run
+1. `$ npm install`
+  Install the necessary packages including webpack
+2. `$ npm audit fix`
+  In case some of the packages have gone highly vulnerable
+3. `$ npm run-script start`
+  Enjoy!
+
 ## Config Files
-### package.json
+### package.json ([of npm](https://docs.npmjs.com/files/package.json))
 * main: dist/bundle.js
-* scripts: dev, build, watch, prod, start
+* scripts: dev, build, watch, prod, start (run by [npm run-script <stage>](https://docs.npmjs.com/misc/scripts))
 * devDependencies
 * dependencies
 
-### package-lock.json
+### package-lock.json ([of npm](https://docs.npmjs.com/files/package-lock.json))
 * Package list with exact versions
 
-### tsconfig.json
+### tsconfig.json ([of ts-loader](https://github.com/TypeStrong/ts-loader))
 * compilerOptions
   * baseUrl
   * declaration
@@ -26,7 +36,7 @@ Sample project for my future reference.
   * rootDir
 * include
 
-### webpack.config.js
+### webpack.config.js ([of webpack](https://webpack.js.org/concepts/))
 * module.exports
   * mode: development
   * entry: ./src/index.ts
@@ -39,6 +49,5 @@ Sample project for my future reference.
   * resolve: .ts, .tsx, .js, .json
   * module
     * rules
-      * { test: /\.tsx?$/, loader: "ts-loader", exclude: '/node_modules/' }
-      * { test: /\.css$/, use: ['style-loader', 'css-loader']}
+      * { test: /\.tsx?$/, loader: __"ts-loader"__, exclude: '/node_modules/' }
   * plugins: HtmlWebpackPlugin, webpack.HotModuleReplacementPlugin()

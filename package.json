@@ -32,7 +32,7 @@
     "typescript": "^3.2.2",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2",
-    "webpack-devserver": "0.0.6"
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^0.14.1"

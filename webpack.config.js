@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
     mode: "development", 
     entry: [
-        "./src/index.ts"
+        path.resolve(__dirname, "src", "index.ts")
     ],
     devServer: {
         open: true,
@@ -22,15 +22,13 @@ module.exports = {
         filename: "bundle.js",
     },
     resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".ts", ".js", ".json"]
     },
 
     module: {
         rules: [
             // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader", exclude: '/node_modules/' },
-            { test: /\.css$/, use: ['style-loader', 'css-loader']},
+            { test: /\.ts$/, loader: "ts-loader", exclude: '/node_modules/' },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
@@ -38,6 +36,6 @@ module.exports = {
     
      plugins: [
         new HtmlWebpackPlugin({template: 'src/index.html'}),
-        new webpack.HotModuleReplacementPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
